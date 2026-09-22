@@ -1,0 +1,185 @@
+# CSS Design Tokens & Base
+:root,
+[data-theme='light'] {
+  /* Surfaces */
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f1f4;
+  --color-surface-offset: #eaebef;
+  --color-divider: #e2e4e8;
+  --color-border: #d4d7dd;
+
+  /* Text */
+  --color-text: #1a1d23;
+  --color-text-muted: #5c6370;
+  --color-text-faint: #9ba1ab;
+  --color-text-inverse: #ffffff;
+
+  /* Primary — Deep Teal */
+  --color-primary: #0d5c63;
+  --color-primary-hover: #0a454b;
+  --color-primary-active: #073338;
+  --color-primary-highlight: #d0e8ea;
+
+  /* Accent — Warm Gold */
+  --color-accent: #c8861e;
+  --color-accent-hover: #a8731a;
+
+  /* Blue */
+  --color-blue: #2563eb;
+  --color-blue-highlight: #dbeafe;
+
+  /* Success */
+  --color-success: #16a34a;
+  --color-success-highlight: #dcfce7;
+
+  /* Warning */
+  --color-warning: #d97706;
+  --color-warning-highlight: #fef3c7;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+
+  /* Fonts */
+  --font-display: 'Noto Serif TC', 'Source Han Serif', Georgia, serif;
+  --font-body: 'Noto Sans TC', -apple-system, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0f1115;
+  --color-surface: #1a1d24;
+  --color-surface-2: #21252e;
+  --color-surface-offset: #252a34;
+  --color-divider: #2d3340;
+  --color-border: #3a4150;
+
+  --color-text: #dfe2e8;
+  --color-text-muted: #8b919e;
+  --color-text-faint: #5c6370;
+  --color-text-inverse: #0f1115;
+
+  --color-primary: #4db5ac;
+  --color-primary-hover: #3a9d94;
+  --color-primary-active: #2d827a;
+  --color-primary-highlight: #1e3a3d;
+
+  --color-accent: #e0a542;
+  --color-accent-hover: #c8861e;
+
+  --color-blue: #60a5fa;
+  --color-blue-highlight: #1e3a5f;
+
+  --color-success: #4ade80;
+  --color-success-highlight: #1a3a28;
+
+  --color-warning: #fbbf24;
+  --color-warning-highlight: #3a2e10;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* Type Scale */
+:root {
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+input, button, textarea, select { font: inherit; color: inherit; }
+table { border-collapse: collapse; width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+p, li { text-wrap: pretty; max-width: 72ch; }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+a:hover { color: var(--color-primary-hover); }
+
+::selection {
+  background: color-mix(in oklab, var(--color-primary) 25%, transparent);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+button { cursor: pointer; background: none; border: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

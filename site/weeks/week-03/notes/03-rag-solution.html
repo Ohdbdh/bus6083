@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. RAG 作為解決方案 — BUS6083 Week 03</title>
+  <meta name="description" content="3. RAG 作為解決方案 — BUS6083 Week 03 課程知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Week 03 學習路徑</div>
+        <a href="../../notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
+<a href="../../notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
+<a href="../../notes/03-rag-solution.html" class="sidebar-link active"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
+<a href="../../notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
+<a href="../../notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
+<a href="../../notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
+<a href="../../notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
+<a href="../../notes/08-ui-ux-vibe-coding.html" class="sidebar-link"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">模板與練習</div>
+        <a href="../../templates/system-prompt-airline.html" class="sidebar-link">航空客服提示詞</a>
+<a href="../../templates/website-short-template.html" class="sidebar-link">網站簡短模板</a>
+<a href="../../templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
+<a href="../../templates/chatflow-risk-control-template.html" class="sidebar-link">Chatflow 風控模板</a>
+        <a href="../../exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
+<a href="../../exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
+<a href="../../exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">3. RAG 作為解決方案</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <a href="../../weeks/week-03/index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回 Week 03
+        </a>
+        <div class="article-header">
+          <h1 class="article-title">3. RAG 作為解決方案</h1>
+        </div>
+        <div class="article-body">
+
+<h2>範式轉移</h2>
+
+<p>從「讓 AI 自由回答」到「教會 AI 自主檢索與研究資訊」。</p>
+
+<p>前兩節我們看到了兩個極端：Klarna 用 RAG + API 取得成功，Air Canada 讓 LLM 自由回答導致法律責任。業界的共識是——需要一種架構，讓 AI 基於事實回答，而非自由生成。</p>
+
+<hr>
+
+<h2>何謂 RAG？</h2>
+
+<blockquote><strong>檢索增強生成（Retrieval-Augmented Generation, RAG）</strong>：一種系統架構，透過從外部知識庫<strong>動態檢索</strong>相關資訊，並將其作為上下文輸入，從而增強 LLM 的輸出準確度。</blockquote>
+
+<p>最早於 <strong>2020 年由 Patrick Lewis 等人</strong>正式提出。</p>
+
+<ul><li>論文：Lewis, P., et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. NeurIPS.</li>
+</ul>
+<hr>
+
+<h2>開卷考試比喻</h2>
+
+<table>
+<tr><th>模式</th><th>比喻</th><th>說明</th></tr>
+<tr><td><strong>傳統 LLM</strong></td><td>閉卷考試的資優生</td><td>通曉通識，但面對具體或冷門的專業細節，會胡亂猜測甚至憑空捏造答案</td></tr>
+<tr><td><strong>RAG 增強的 LLM</strong></td><td>開卷考試的資優生</td><td>同樣聰明，但落筆前可以查閱官方教科書與指引以核實資料</td></tr>
+</table>
+
+<p>RAG 不改變 LLM 本身，而是為它提供了一個「可以查書」的機制。</p>
+
+<hr>
+
+<h2>RAG 的核心價值</h2>
+
+<h3>1. 零重新訓練成本</h3>
+
+<p>當企業內部政策調整時，毋須耗費數百萬美元重新訓練 LLM——只需上載最新的 PDF 文件即可更新知識庫。</p>
+
+<h3>2. 大幅節省時間</h3>
+
+<p>將雜亂、非結構化的 PDF 文檔瞬間轉化為可即時查詢的知識資產，節省成千上萬的人工工時。</p>
+
+<h3>3. 來源引註與審計追溯</h3>
+
+<p>這是企業 AI 採用 RAG 的關鍵原因。一旦 AI 提供了錯誤建議，企業必須能查明成因。由於 RAG 每次均檢索具體的文檔區塊，開發者能<strong>精確追溯</strong> AI 是依據哪一段原文生成回覆，從而實現精準排錯與審計。</p>
+
+<hr>
+
+<h2>RAG 在真實產品中的應用</h2>
+
+<h3>Perplexity</h3>
+
+<p><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a> 首創將 LLM 結合即時網絡檢索，透過 RAG 機制自動整合資料並標註引用出處，開創了免翻查網頁的全新搜尋模式，帶動了 Copilot 及 Google AI Overview 的發展。</p>
+
+<h3>應用場景</h3>
+
+<p>RAG 適用於需要「高準確度、具事實依據、可追溯來源」的領域：</p>
+
+<ul><li>市場研究</li>
+<li>法律諮詢</li>
+<li>學術文獻檢索</li>
+<li>產品比對</li>
+<li>企業客服（如 Klarna）</li>
+</ul>
+<hr>
+
+<h2>本節小結</h2>
+
+<p>RAG 解決了 LLM 的兩個核心問題：<strong>知識截斷</strong>（可以檢索最新資訊）和<strong>幻覺</strong>（基於事實回答而非自由生成）。同時帶來了企業最需要的<strong>審計追溯</strong>能力。</p>
+
+<p>接下來，我們將在教大 MaaS 平台上親手實作一個 RAG 系統。</p>
+
+        </div>
+      </main>
+
+      <footer class="footer">
+        BUS6083 · Week 03 · 課程知識庫<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

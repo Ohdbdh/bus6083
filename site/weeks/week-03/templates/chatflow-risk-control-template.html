@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatflow 風控架構模板 — BUS6083 Week 03</title>
+  <meta name="description" content="Chatflow 風控架構模板 — BUS6083 Week 03 課程知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Week 03 學習路徑</div>
+        <a href="../../notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
+<a href="../../notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
+<a href="../../notes/03-rag-solution.html" class="sidebar-link"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
+<a href="../../notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
+<a href="../../notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
+<a href="../../notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
+<a href="../../notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
+<a href="../../notes/08-ui-ux-vibe-coding.html" class="sidebar-link"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">模板與練習</div>
+        <a href="../../templates/system-prompt-airline.html" class="sidebar-link">航空客服提示詞</a>
+<a href="../../templates/website-short-template.html" class="sidebar-link">網站簡短模板</a>
+<a href="../../templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
+<a href="../../templates/chatflow-risk-control-template.html" class="sidebar-link active">Chatflow 風控模板</a>
+        <a href="../../exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
+<a href="../../exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
+<a href="../../exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">Chatflow 風控架構模板</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <a href="../../weeks/week-03/index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回 Week 03
+        </a>
+        <div class="article-header">
+          <h1 class="article-title">Chatflow 風控架構模板</h1>
+        </div>
+        <div class="article-body">
+
+<blockquote>使用場景：在教大 MaaS 平台建立 Chatflow 工作流時的架構參考。</blockquote>
+
+<hr>
+
+<h2>架構概覽</h2>
+
+<pre><code>【流程開始】
+    ↓
+【問題分類器 Intent Classifier】
+    ↓                    ↓
+  分類 1                分類 2
+  低風險業務            高風險財務業務
+  （行李/餐飲/登機）    （退款/索賠/法律）
+    ↓                    ↓
+【知識庫檢索 Dataset】   【指定回復】
+    ↓                    ↓
+【AI 對話 AI Chat】      固定回復內容
+    ↓
+  生成解答
+    ↓
+【流程結束】</code></pre>
+
+<hr>
+
+<h2>節點配置清單</h2>
+
+<h3>1. 問題分類器（Intent Classifier）</h3>
+
+<table>
+<tr><th>項目</th><th>配置</th></tr>
+<tr><td>模型</td><td>Llama-4-Maverick</td></tr>
+<tr><td>分類 1</td><td>低風險業務（行李額度 / 機上餐飲 / 登機時間）</td></tr>
+<tr><td>分類 2</td><td>高風險財務業務（喪親特惠 / 退票改簽 / 差價退款 / 法律索賠）</td></tr>
+</table>
+
+<h3>2. 數據集節點（Dataset）— 僅分類 1</h3>
+
+<table>
+<tr><th>項目</th><th>配置</th></tr>
+<tr><td>數據集</td><td>business（或自建知識庫）</td></tr>
+<tr><td>搜尋方法</td><td>混合搜尋</td></tr>
+<tr><td>Top K</td><td>5000</td></tr>
+<tr><td>相似度閾值</td><td>0.4</td></tr>
+<tr><td>重排模型</td><td>Llama-4-Maverick</td></tr>
+<tr><td>檢索詞變數</td><td>流程開始 > 用戶問題</td></tr>
+</table>
+
+<h3>3. AI 對話節點（AI Chat）— 僅分類 1</h3>
+
+<table>
+<tr><th>項目</th><th>配置</th></tr>
+<tr><td>模型</td><td>Deepseek-V4-Flash</td></tr>
+<tr><td>系統提示詞</td><td>見下方</td></tr>
+<tr><td>Temperature</td><td>0.1-0.3（低，確保事實準確）</td></tr>
+<tr><td>Max Tokens</td><td>1000</td></tr>
+<tr><td>輸出變數</td><td>answer</td></tr>
+</table>
+
+<p><strong>系統提示詞：</strong></p>
+<pre><code>你是一位航空公司的客戶服務助理。
+規則：
+1. 只根據已上載的知識庫文件回答問題。
+2. 回答時必須指出依據的文件段落或政策條款編號。
+3. 如知識庫沒有足夠資料，必須回答：
+   「根據現有文件，我無法確認此資訊，建議聯絡客戶服務專員核實。」
+4. 所有回覆使用繁體中文，語氣專業、簡潔、有禮。</code></pre>
+
+<p>在提示詞中使用「/」插入變數：</p>
+<ul><li><code>知識庫搜索 > 知識庫引用</code>（檢索結果）</li>
+<li><code>流程開始 > 用戶問題</code>（用戶輸入）</li>
+</ul>
+<h3>4. 指定回復節點（Specified Response）— 僅分類 2</h3>
+
+<table>
+<tr><th>項目</th><th>配置</th></tr>
+<tr><td>回復方式</td><td>手動輸入</td></tr>
+<tr><td>回復內容</td><td>您的訴求已收到，專員將在 24 小時內致電核實</td></tr>
+</table>
+
+<hr>
+
+<h2>設計原則</h2>
+
+<table>
+<tr><th>原則</th><th>說明</th></tr>
+<tr><td><strong>意圖分類先行</strong></td><td>所有問題先經分類器判別類型</td></tr>
+<tr><td><strong>低風險走 RAG</strong></td><td>一般查詢由 RAG + LLM 生成回答</td></tr>
+<tr><td><strong>高風險硬隔離</strong></td><td>涉及金錢/退款/法律的問題繞過 LLM，直接固定回復或轉人工</td></tr>
+<tr><td><strong>變數串接</strong></td><td>各節點透過變數傳遞數據，實現模組化解耦</td></tr>
+</table>
+
+        </div>
+      </main>
+
+      <footer class="footer">
+        BUS6083 · Week 03 · 課程知識庫<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

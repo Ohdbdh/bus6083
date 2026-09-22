@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>航空客服系統提示詞 — BUS6083 Week 03</title>
+  <meta name="description" content="航空客服系統提示詞 — BUS6083 Week 03 課程知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Week 03 學習路徑</div>
+        <a href="../../notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
+<a href="../../notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
+<a href="../../notes/03-rag-solution.html" class="sidebar-link"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
+<a href="../../notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
+<a href="../../notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
+<a href="../../notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
+<a href="../../notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
+<a href="../../notes/08-ui-ux-vibe-coding.html" class="sidebar-link"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">模板與練習</div>
+        <a href="../../templates/system-prompt-airline.html" class="sidebar-link active">航空客服提示詞</a>
+<a href="../../templates/website-short-template.html" class="sidebar-link">網站簡短模板</a>
+<a href="../../templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
+<a href="../../templates/chatflow-risk-control-template.html" class="sidebar-link">Chatflow 風控模板</a>
+        <a href="../../exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
+<a href="../../exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
+<a href="../../exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">航空客服系統提示詞</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <a href="../../weeks/week-03/index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回 Week 03
+        </a>
+        <div class="article-header">
+          <h1 class="article-title">航空客服系統提示詞</h1>
+        </div>
+        <div class="article-body">
+
+<blockquote>使用場景：在教大 MaaS 平台建立 RAG 聊天機械人時，填入系統提示詞設定區。</blockquote>
+
+<hr>
+
+<h2>系統提示詞（System Prompt）</h2>
+
+<pre><code>你是一位航空公司的客戶服務助理。
+
+規則：
+1. 只根據已上載的知識庫文件回答問題，不可以使用其他來源的資訊。
+2. 回答時必須清楚指出你依據的文件段落或政策條款編號。
+3. 如果知識庫中沒有足夠資料回答問題，必須明確回答：
+   「根據現有文件，我無法確認此資訊，建議聯絡客戶服務專員核實。」
+   不可以自行推測或編造答案。
+4. 所有回覆必須使用繁體中文，語氣專業、簡潔、有禮。</code></pre>
+
+<hr>
+
+<h2>結構分析（R-C-C-O 公式）</h2>
+
+<table>
+<tr><th>組件</th><th>對應內容</th></tr>
+<tr><td><strong>R — 角色</strong></td><td>航空公司的客戶服務助理</td></tr>
+<tr><td><strong>C — 核心指令</strong></td><td>根據知識庫文件回答問題</td></tr>
+<tr><td><strong>C — 限制條件</strong></td><td>不可使用其他來源；必須引用條款編號；不可編造答案；使用繁體中文</td></tr>
+<tr><td><strong>O — 輸出格式</strong></td><td>專業、簡潔、有禮的語氣</td></tr>
+</table>
+
+<hr>
+
+<h2>建議配置</h2>
+
+<table>
+<tr><th>參數</th><th>建議值</th></tr>
+<tr><td>AI 模型</td><td>Deepseek-V4-Flash（或 GLM-4-flash FREE）</td></tr>
+<tr><td>Temperature</td><td>低（0.1-0.3），確保事實準確</td></tr>
+<tr><td>Max Tokens</td><td>1000</td></tr>
+<tr><td>關聯知識庫</td><td>business（或其他上載的知識庫）</td></tr>
+<tr><td>搜尋模式</td><td>混合搜尋</td></tr>
+<tr><td>最低相關度</td><td>0.4</td></tr>
+<tr><td>重排</td><td>開啟</td></tr>
+</table>
+
+        </div>
+      </main>
+
+      <footer class="footer">
+        BUS6083 · Week 03 · 課程知識庫<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

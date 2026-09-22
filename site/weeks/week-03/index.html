@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 03 — RAG、負責任使用 & UI 設計 — BUS6083</title>
+  <meta name="description" content="Week 03: RAG、負責任使用 & UI 設計 — 從商業動機到 RAG 實作，從 Chatflow 風控到 Vibe Coding。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Week 03 學習路徑</div>
+        <a href="notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
+        <a href="notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
+        <a href="notes/03-rag-solution.html" class="sidebar-link"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
+        <a href="notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
+        <a href="notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
+        <a href="notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
+        <a href="notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
+        <a href="notes/08-ui-ux-vibe-coding.html" class="sidebar-link"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">模板與練習</div>
+        <a href="templates/system-prompt-airline.html" class="sidebar-link">航空客服提示詞</a>
+        <a href="templates/website-short-template.html" class="sidebar-link">網站簡短模板</a>
+        <a href="templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
+        <a href="templates/chatflow-risk-control-template.html" class="sidebar-link">Chatflow 風控模板</a>
+        <a href="exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
+        <a href="exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
+        <a href="exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">Week 03 · RAG、負責任使用 & UI 設計</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <a href="../../index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回課程首頁
+        </a>
+
+        <section class="hero">
+          <div class="hero-badge">Week 03</div>
+          <h1 class="hero-title">RAG、負責任使用<br>& UI 設計</h1>
+          <p class="hero-subtitle">從「為什麼企業需要 AI 客服」到「如何構建 RAG 系統」，從「Chatflow 風控架構」到「Vibe Coding 生成 UI」。按教學敘事邏輯重組，不再照搬幻燈片順序。</p>
+        </section>
+
+        <h2 class="section-title">學習路徑</h2>
+        <p class="section-desc">按順序學習，或按需跳轉查閱。每個模組獨立可讀。</p>
+        <div class="module-grid">
+          <a href="notes/01-business-motivation.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">1</span><span class="module-card-title">商業動機</span></div>
+            <p class="module-card-desc">市場數據與 Klarna 案例——為什麼企業要用 AI 客服</p>
+            <div class="module-card-tags"><span class="tag">市場</span><span class="tag">Klarna</span></div>
+          </a>
+          <a href="notes/02-llm-hallucination-risk.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">2</span><span class="module-card-title">LLM 幻覺與風險</span></div>
+            <p class="module-card-desc">概率生成、知識截斷、幻覺、Air Canada 法律案例</p>
+            <div class="module-card-tags"><span class="tag">幻覺</span><span class="tag">Air Canada</span></div>
+          </a>
+          <a href="notes/03-rag-solution.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">3</span><span class="module-card-title">RAG 解決方案</span></div>
+            <p class="module-card-desc">RAG 定義、開卷考試比喻、價值、審計追溯</p>
+            <div class="module-card-tags"><span class="tag">RAG</span><span class="tag">審計</span></div>
+          </a>
+          <a href="notes/04-maas-knowledge-base.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">4</span><span class="module-card-title">MaaS 與知識庫</span></div>
+            <p class="module-card-desc">平台登入、數據集建立、模型配置、檢索測試</p>
+            <div class="module-card-tags"><span class="tag">MaaS</span><span class="tag">實作</span></div>
+          </a>
+          <a href="notes/05-build-rag-chatbot.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">5</span><span class="module-card-title">構建 RAG 聊天機械人</span></div>
+            <p class="module-card-desc">系統提示詞、R-C-C-O 公式、模型調校、發布</p>
+            <div class="module-card-tags"><span class="tag">Chatbot</span><span class="tag">Prompt</span></div>
+          </a>
+          <a href="notes/06-chatflow-risk-control.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">6</span><span class="module-card-title">Chatflow 風控</span></div>
+            <p class="module-card-desc">意圖分類、低風險 RAG 路徑、高風險固定回復</p>
+            <div class="module-card-tags"><span class="tag">Chatflow</span><span class="tag">風控</span></div>
+          </a>
+          <a href="notes/07-security-responsible-use.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">7</span><span class="module-card-title">安全與負責任使用</span></div>
+            <p class="module-card-desc">越獄攻擊、本地部署 Ollama、人機協作</p>
+            <div class="module-card-tags"><span class="tag">安全</span><span class="tag">Ollama</span></div>
+          </a>
+          <a href="notes/08-ui-ux-vibe-coding.html" class="module-card">
+            <div class="module-card-header"><span class="module-card-num">8</span><span class="module-card-title">UI/UX & Vibe Coding</span></div>
+            <p class="module-card-desc">Gemini Canvas、網站生成 Prompt 公式與模板</p>
+            <div class="module-card-tags"><span class="tag">UI/UX</span><span class="tag">Vibe Coding</span></div>
+          </a>
+        </div>
+
+        <h2 class="section-title">模板與練習</h2>
+        <p class="section-desc">上課時可直接複製使用的 Prompt 模板和配套練習。</p>
+        <div class="link-list">
+          <a href="templates/system-prompt-airline.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><span class="link-item-text">航空客服系統提示詞</span></a>
+          <a href="templates/website-short-template.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="link-item-text">網站生成 — 簡短模板</span></a>
+          <a href="templates/website-full-template.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="link-item-text">網站生成 — 完整模板</span></a>
+          <a href="templates/chatflow-risk-control-template.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="link-item-text">Chatflow 風控架構模板</span></a>
+          <a href="exercises/exercise-1-rag-chatbot.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="link-item-text">練習一：RAG 聊天機械人</span></a>
+          <a href="exercises/exercise-2-chatflow-risk-control.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="link-item-text">練習二：Chatflow 風控架構</span></a>
+          <a href="exercises/exercise-3-ui-prototype.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></span><span class="link-item-text">練習三：UI 原型設計</span></a>
+        </div>
+      </main>
+
+      <footer class="footer">
+        BUS6083 · Week 03 · RAG、負責任使用 & UI 設計 · 課程知識庫<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

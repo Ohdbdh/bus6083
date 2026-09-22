@@ -6,11 +6,12 @@
 ## 前置條件
 - 已登入教大 MaaS 平台 (https://maas.eduhk.hk/)
 - 已準備一份客服政策文檔（PDF 或 TXT 格式）
+- 已閱讀 [notes/04-maas-knowledge-base.md](../notes/04-maas-knowledge-base.md) 和 [notes/05-build-rag-chatbot.md](../notes/05-build-rag-chatbot.md)
 
 ## 步驟
 
 ### Part A：建立知識庫
-1. 進入「數據集」（Dataset）> 點擊「建立」
+1. 進入「數據集」> 點擊「建立」
 2. 選擇「文本數據集」> 選擇「Local File」> 上載你的文檔
 3. 配置模型：
    - 索引模型：embedding-3 (FREE)
@@ -26,8 +27,8 @@
 4. 嘗試切換搜尋模式（語義 / 全文 / 混合），比較結果差異
 
 ### Part C：建立聊天機械人
-1. 回到主介面 > 點擊「+ Create」> 選擇「Simple App」
-2. 配置以下設定：
+1. 點擊「+ Create」> 選擇「Simple App」
+2. 配置：
    - AI 模型：Deepseek-V4-Flash 或 GLM-4-flash
    - 系統提示詞：使用 [航空客服模板](../templates/system-prompt-airline.md)
    - 數據庫：關聯你在 Part A 建立的知識庫

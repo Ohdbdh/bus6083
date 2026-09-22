@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8. UI/UX & Vibe Coding — BUS6083 Week 03</title>
+  <meta name="description" content="8. UI/UX & Vibe Coding — BUS6083 Week 03 課程知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Week 03 學習路徑</div>
+        <a href="../../notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
+<a href="../../notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
+<a href="../../notes/03-rag-solution.html" class="sidebar-link"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
+<a href="../../notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
+<a href="../../notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
+<a href="../../notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
+<a href="../../notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
+<a href="../../notes/08-ui-ux-vibe-coding.html" class="sidebar-link active"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">模板與練習</div>
+        <a href="../../templates/system-prompt-airline.html" class="sidebar-link">航空客服提示詞</a>
+<a href="../../templates/website-short-template.html" class="sidebar-link">網站簡短模板</a>
+<a href="../../templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
+<a href="../../templates/chatflow-risk-control-template.html" class="sidebar-link">Chatflow 風控模板</a>
+        <a href="../../exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
+<a href="../../exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
+<a href="../../exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">8. UI/UX & Vibe Coding</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <a href="../../weeks/week-03/index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回 Week 03
+        </a>
+        <div class="article-header">
+          <h1 class="article-title">8. UI/UX & Vibe Coding</h1>
+        </div>
+        <div class="article-body">
+
+<p>本節是獨立的技能模組，不屬於 RAG 主線，但與 AI 應用開發密切相關。</p>
+
+<h2>什麼是 UI/UX？</h2>
+
+<table>
+<tr><th>概念</th><th>定義</th><th>關注點</th></tr>
+<tr><td><strong>UI（User Interface）</strong></td><td>應用程式的「外觀」</td><td>顏色、字型、佈局、按鈕</td></tr>
+<tr><td><strong>UX（User Experience）</strong></td><td>應用程式的「使用感受」</td><td>是否易於操作？邏輯是否清晰？速度是否流暢？</td></tr>
+</table>
+
+<blockquote><strong>良好的設計並非裝飾，而是溝通。</strong></blockquote>
+
+<table>
+<tr><th>情境</th><th>評價</th></tr>
+<tr><td>精美但導航混亂</td><td>糟糕的 UX</td></tr>
+<tr><td>簡潔但精準滿足需求</td><td>優秀的 UX</td></tr>
+</table>
+
+<hr>
+
+<h2>Vibe Coding：用自然語言寫程式</h2>
+
+<h3>舊模式 vs 新模式</h3>
+
+<table>
+<tr><th>比較項</th><th>舊模式</th><th>新模式</th></tr>
+<tr><td>技能</td><td>學習 HTML/CSS/JS（數月）</td><td>以語言描述（數分鐘）</td></tr>
+<tr><td>成本</td><td>聘請開發人員</td><td>向 AI 發出指令（免費）</td></tr>
+<tr><td>除錯</td><td>逐行修復</td><td>告知 AI 哪裡出了問題</td></tr>
+<tr><td>版本管理</td><td>需要版本控制</td><td>透過對話疊代</td></tr>
+</table>
+
+<h3>Vibe Coding 流程</h3>
+
+<ul><li>用自然語言描述應用程式</li>
+<li>AI 生成可運作的 HTML/CSS/JS</li>
+<li>即時預覽結果</li>
+<li>透過對話要求修改</li>
+<li>重複直到滿意</li>
+<li>複製程式碼 / 分享連結</li>
+</ul>
+<hr>
+
+<h2>Google Gemini Canvas</h2>
+
+<ul><li><strong>工具</strong>：https://gemini.google.com/</li>
+<li><strong>Canvas 功能</strong>：將靜態結果轉化為互動式應用程式或網站</li>
+<li><strong>模型選擇</strong>：</li>
+<li>Pro：更優質結果，等待約 5 分鐘</li>
+<li>Flash：速度快，節省積分</li>
+</ul>
+<hr>
+
+<h2>網站生成 Prompt 公式</h2>
+
+<h3>四大要素</h3>
+
+<table>
+<tr><th>要素</th><th>說明</th></tr>
+<tr><td><strong>目的與主題</strong></td><td>明確定義網站目標</td></tr>
+<tr><td><strong>內容結構</strong></td><td>指定所需內容與頁面</td></tr>
+<tr><td><strong>功能需求</strong></td><td>進度追蹤、互動式彈出視窗、動態資訊</td></tr>
+<tr><td><strong>視覺風格</strong></td><td>描述設計美學</td></tr>
+</table>
+
+<h3>簡短模板</h3>
+
+<pre><code>建立一個 [頁數]-頁的網站，主題為 [目的]。
+受眾：[對象]。風格：[風格]。
+圖片：圖片網址。手機響應式設計。</code></pre>
+
+<h3>完整模板</h3>
+
+<pre><code>建立一個 [頁數]-頁的網站，主題為 [目的]。
+目標受眾：[對象]。
+頁面：[頁面列表及簡短說明]。
+關鍵功能：[功能列表]。
+圖片：使用如 Unsplash 等免費線上圖庫。
+風格：[風格]。主色調：[色盤]。字型：[字型描述]。
+手機響應式設計。包含導航選單。</code></pre>
+
+<h3>風格選項</h3>
+
+<p>極簡風格、深色模式、紅金傳統風、粉彩可愛風、復古報紙風、企業專業風、像素藝術、卡通、極簡平面風、深色霓虹風</p>
+
+<h3>使用自己的圖片</h3>
+<p>提供圖片網址（Google Search / Unsplash / Google Drive 連結），並告知 AI 放置位置。</p>
+
+<hr>
+
+<h2>UI 設計資源</h2>
+
+<table>
+<tr><th>資源</th><th>連結</th></tr>
+<tr><td>UI Prompt Library</td><td>https://uipromptlibrary.com/</td></tr>
+<tr><td>UI Prompt Explorer</td><td>https://uiprompt.art/</td></tr>
+<tr><td>UI/UX Pro Max</td><td>https://uupm.cc/#styles</td></tr>
+<tr><td>UIverse</td><td>https://uiverse.io/</td></tr>
+<tr><td>HTML Color Codes</td><td>https://htmlcolorcodes.com/</td></tr>
+</table>
+
+<hr>
+
+<h2>常見錯誤與修復</h2>
+
+<table>
+<tr><th>#</th><th>錯誤</th><th>修復方法</th></tr>
+<tr><td>1</td><td>按鈕無反應</td><td>描述具體錯誤給 Gemini，要求修正程式碼；無效則重新生成</td></tr>
+<tr><td>2</td><td>圖片不正確</td><td>要求 Gemini 使用免費圖庫，或直接貼上圖片網址</td></tr>
+<tr><td>3</td><td>無法儲存進度</td><td>Gemini Canvas 目前不支援帳號登入與進度儲存</td></tr>
+</table>
+
+<hr>
+
+<h2>發布作品</h2>
+
+<ul><li>點擊「分享」（Share）>「複製」（Copy）</li>
+<li>訪客需使用 Google Gemini 帳號才能瀏覽</li>
+</ul>
+<hr>
+
+<h2>實戰範例：智能排班系統</h2>
+
+<h3>Prompt 指令</h3>
+
+<blockquote>請在 Canvas 中幫我構建一個現代極簡風格的【員工報更與智能排班系統】，單頁面 HTML/JS 原型：</blockquote>
+<p>></p>
+<blockquote>1. 員工端：輸入姓名工號，勾選空閒時段（早班/午班/晚班） 2. 管理員端：儀表板展示熱力圖，一鍵智能排班（每班至少 2 人），高亮人手不足時段</blockquote>
+
+<h3>成效</h3>
+<ul><li>學生可在瀏覽器直接交互測試</li>
+<li>從想法到可用原型，耗時不到 3 分鐘</li>
+</ul>
+        </div>
+      </main>
+
+      <footer class="footer">
+        BUS6083 · Week 03 · 課程知識庫<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>
