@@ -84,6 +84,11 @@ def md_to_html(md):
             continue
         elif line.strip() == '---':
             result.append('<hr>')
+        elif re.match(r'^[\s]*[-*]\s+\[[ xX]\]\s+', line):
+            # Checkbox list item
+            checked = ' checked' if '[x]' in line.lower() or '[X]' in line else ''
+            text = re.sub(r'^[\s]*[-*]\s+\[[ xX]\]\s+', '', line)
+            result.append(f'<div class="checkbox-item"><input type="checkbox"{checked} disabled> {inline(text)}</div>')
         elif re.match(r'^[\s]*[-*]\s+', line):
             result.append(f'<li>{inline(re.sub(r"^[\s]*[-*]\s+", "", line))}</li>')
         elif re.match(r'^\d+\.\s+', line):
@@ -131,13 +136,22 @@ EXERCISE_LINKS = [
 
 
 def make_page(title, body_html, active_id=None):
-    """Generate HTML page with shared sidebar layout."""
-    prefix = "../../"  # notes/ pages are in site/weeks/week-03/notes/
+    """Generate HTML page with shared sidebar layout.
+    
+    Pages are generated at site/weeks/week-03/{notes,templates,exercises}/*.html
+    That's 3 levels deep from site root, so:
+    - Assets (CSS/JS) need ../../../ prefix
+    - Site root index needs ../../../ prefix  
+    - Week-03 index needs ../ prefix (same level as notes/templates/exercises)
+    - Sibling pages (other notes, templates, exercises) need ../ prefix + subfolder
+    """
+    ASSET = "../../../"  # to reach site/ root (assets/, index.html)
+    PAGE = "../"         # to reach weeks/week-03/ (index.html, and subfolders)
     
     def make_link(href, num, label, active_id):
         cls = ' class="sidebar-link active"' if active_id == href else ' class="sidebar-link"'
         num_html = f'<span class="sidebar-link-num">{num}</span>' if num else ''
-        return f'<a href="{prefix}{href}"{cls}>{num_html}{label}</a>'
+        return f'<a href="{PAGE}{href}"{cls}>{num_html}{label}</a>'
     
     module_links = '\n'.join(make_link(h, n, l, active_id) for h, n, l in SIDEBAR_LINKS)
     template_links = '\n'.join(make_link(h, None, l, active_id) for h, l in TEMPLATE_LINKS)
@@ -153,14 +167,14 @@ def make_page(title, body_html, active_id=None):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{prefix}assets/style.css">
-  <link rel="stylesheet" href="{prefix}assets/layout.css">
+  <link rel="stylesheet" href="{ASSET}assets/style.css">
+  <link rel="stylesheet" href="{ASSET}assets/layout.css">
 </head>
 <body>
   <div class="sidebar-overlay"></div>
   <div class="page-layout">
     <aside class="sidebar">
-      <a href="{prefix}index.html" class="sidebar-brand">
+      <a href="{ASSET}index.html" class="sidebar-brand">
         <div class="sidebar-brand-icon">B</div>
         <div class="sidebar-brand-text">
           <span class="sidebar-brand-title">BUS6083</span>
@@ -204,7 +218,7 @@ def make_page(title, body_html, active_id=None):
       </header>
 
       <main class="content">
-        <a href="{prefix}weeks/week-03/index.html" class="article-back">
+        <a href="{PAGE}index.html" class="article-back">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           返回 Week 03
         </a>
@@ -222,7 +236,7 @@ def make_page(title, body_html, active_id=None):
       </footer>
     </div>
   </div>
-  <script src="{prefix}assets/app.js"></script>
+  <script src="{ASSET}assets/app.js"></script>
 </body>
 </html>'''
 
@@ -235,8 +249,8 @@ notes = [
     ("weeks/week-03/notes/04-maas-knowledge-base.md", "notes/04-maas-knowledge-base.html", "4. 實作準備：MaaS 平台與知識庫"),
     ("weeks/week-03/notes/05-build-rag-chatbot.md", "notes/05-build-rag-chatbot.html", "5. 實作：構建 RAG 聊天機械人"),
     ("weeks/week-03/notes/06-chatflow-risk-control.md", "notes/06-chatflow-risk-control.html", "6. 進階：Chatflow 風控架構"),
-    ("weeks/week-03/notes/07-security-responsible-use.md", "notes/07-security-responsible-use.html", "7. 安全與負責任使用"),
-    ("weeks/week-03/notes/08-ui-ux-vibe-coding.md", "notes/08-ui-ux-vibe-coding.html", "8. UI/UX & Vibe Coding"),
+    ("weeks/week-03/notes/07-security-responsible-use.md", "notes/07-security-responsible-use.html", "7. 部署前安全檢查與治理設計"),
+    ("weeks/week-03/notes/08-ui-ux-vibe-coding.md", "notes/08-ui-ux-vibe-coding.html", "8. UI/UX & Vibe Coding：讓安全系統被使用者看見"),
 ]
 
 for md_path, html_path, title in notes:

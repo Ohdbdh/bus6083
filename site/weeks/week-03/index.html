@@ -82,8 +82,10 @@
           <p class="hero-subtitle">從「為什麼企業需要 AI 客服」到「如何構建 RAG 系統」，從「Chatflow 風控架構」到「Vibe Coding 生成 UI」。按教學敘事邏輯重組，不再照搬幻燈片順序。</p>
         </section>
 
-        <h2 class="section-title">學習路徑</h2>
-        <p class="section-desc">按順序學習，或按需跳轉查閱。每個模組獨立可讀。</p>
+        <h2 class="section-title">三段式學習地圖</h2>
+        <p class="section-desc">8 篇筆記按三個階段展開：為什麼 → 怎麼做 → 如何安全交付。</p>
+
+        <h3 style="color:var(--color-primary);margin-bottom:var(--space-2)">Part A：為什麼需要 RAG？（Notes 1–3）</h3>
         <div class="module-grid">
           <a href="notes/01-business-motivation.html" class="module-card">
             <div class="module-card-header"><span class="module-card-num">1</span><span class="module-card-title">商業動機</span></div>
@@ -100,6 +102,10 @@
             <p class="module-card-desc">RAG 定義、開卷考試比喻、價值、審計追溯</p>
             <div class="module-card-tags"><span class="tag">RAG</span><span class="tag">審計</span></div>
           </a>
+        </div>
+
+        <h3 style="color:var(--color-primary);margin-bottom:var(--space-2)">Part B：如何做出來？（Notes 4–6）</h3>
+        <div class="module-grid">
           <a href="notes/04-maas-knowledge-base.html" class="module-card">
             <div class="module-card-header"><span class="module-card-num">4</span><span class="module-card-title">MaaS 與知識庫</span></div>
             <p class="module-card-desc">平台登入、數據集建立、模型配置、檢索測試</p>
@@ -115,16 +121,30 @@
             <p class="module-card-desc">意圖分類、低風險 RAG 路徑、高風險固定回復</p>
             <div class="module-card-tags"><span class="tag">Chatflow</span><span class="tag">風控</span></div>
           </a>
+        </div>
+
+        <h3 style="color:var(--color-primary);margin-bottom:var(--space-2)">Part C：如何安全地交付給使用者？（Notes 7–8）</h3>
+        <div class="module-grid">
           <a href="notes/07-security-responsible-use.html" class="module-card">
             <div class="module-card-header"><span class="module-card-num">7</span><span class="module-card-title">安全與負責任使用</span></div>
-            <p class="module-card-desc">越獄攻擊、本地部署 Ollama、人機協作</p>
+            <p class="module-card-desc">威脅模型、越獄攻擊、本地部署、部署前檢查清單</p>
             <div class="module-card-tags"><span class="tag">安全</span><span class="tag">Ollama</span></div>
           </a>
           <a href="notes/08-ui-ux-vibe-coding.html" class="module-card">
             <div class="module-card-header"><span class="module-card-num">8</span><span class="module-card-title">UI/UX & Vibe Coding</span></div>
-            <p class="module-card-desc">Gemini Canvas、網站生成 Prompt 公式與模板</p>
+            <p class="module-card-desc">讓安全系統被使用者看見——Gemini Canvas 生成客服 UI</p>
             <div class="module-card-tags"><span class="tag">UI/UX</span><span class="tag">Vibe Coding</span></div>
           </a>
+        </div>
+
+        <h2 class="section-title">Zoom 速查入口</h2>
+        <p class="section-desc">上課時不知道該看哪份筆記？按需求查詢。</p>
+        <div class="link-list">
+          <a href="notes/01-business-motivation.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><span class="link-item-text">看案例 → Notes 1–2（Klarna + Air Canada）</span></a>
+          <a href="notes/04-maas-knowledge-base.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="link-item-text">做知識庫 → Note 4</span></a>
+          <a href="notes/05-build-rag-chatbot.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="link-item-text">寫 Prompt → Note 5 + 模板</span></a>
+          <a href="notes/06-chatflow-risk-control.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="link-item-text">做風控 → Note 6</span></a>
+          <a href="notes/08-ui-ux-vibe-coding.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></span><span class="link-item-text">做 UI 原型 → Note 8</span></a>
         </div>
 
         <h2 class="section-title">模板與練習</h2>
@@ -137,6 +157,20 @@
           <a href="exercises/exercise-1-rag-chatbot.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="link-item-text">練習一：RAG 聊天機械人</span></a>
           <a href="exercises/exercise-2-chatflow-risk-control.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="link-item-text">練習二：Chatflow 風控架構</span></a>
           <a href="exercises/exercise-3-ui-prototype.html" class="link-item"><span class="link-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></span><span class="link-item-text">練習三：UI 原型設計</span></a>
+        </div>
+
+        <h2 class="section-title">本週關鍵詞</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-6)">
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">RAG</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Hallucination</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Knowledge Cutoff</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Embedding</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Hybrid Search</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">System Prompt</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Intent Classifier</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Human-in-the-Loop</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Jailbreak</span>
+          <span class="tag" style="font-size:var(--text-sm);padding:var(--space-1) var(--space-3)">Vibe Coding</span>
         </div>
       </main>
 

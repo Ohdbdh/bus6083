@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>網站生成 — 簡短模板 — BUS6083 Week 03</title>
-  <meta name="description" content="網站生成 — 簡短模板 — BUS6083 Week 03 課程知識庫">
+  <title>Prompt 模式參考 — BUS6083</title>
+  <meta name="description" content="Prompt 模式參考 — BUS6083 課程知識庫">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../assets/style.css">
-  <link rel="stylesheet" href="../../../assets/layout.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/layout.css">
 </head>
 <body>
   <div class="sidebar-overlay"></div>
   <div class="page-layout">
     <aside class="sidebar">
-      <a href="../../../index.html" class="sidebar-brand">
+      <a href="../index.html" class="sidebar-brand">
         <div class="sidebar-brand-icon">B</div>
         <div class="sidebar-brand-text">
           <span class="sidebar-brand-title">BUS6083</span>
@@ -23,25 +23,14 @@
         </div>
       </a>
       <div class="sidebar-section">
-        <div class="sidebar-section-title">Week 03 學習路徑</div>
-        <a href="../notes/01-business-motivation.html" class="sidebar-link"><span class="sidebar-link-num">1</span>商業動機</a>
-<a href="../notes/02-llm-hallucination-risk.html" class="sidebar-link"><span class="sidebar-link-num">2</span>LLM 幻覺與風險</a>
-<a href="../notes/03-rag-solution.html" class="sidebar-link"><span class="sidebar-link-num">3</span>RAG 解決方案</a>
-<a href="../notes/04-maas-knowledge-base.html" class="sidebar-link"><span class="sidebar-link-num">4</span>MaaS 與知識庫</a>
-<a href="../notes/05-build-rag-chatbot.html" class="sidebar-link"><span class="sidebar-link-num">5</span>構建 RAG 聊天機械人</a>
-<a href="../notes/06-chatflow-risk-control.html" class="sidebar-link"><span class="sidebar-link-num">6</span>Chatflow 風控</a>
-<a href="../notes/07-security-responsible-use.html" class="sidebar-link"><span class="sidebar-link-num">7</span>安全與負責任使用</a>
-<a href="../notes/08-ui-ux-vibe-coding.html" class="sidebar-link"><span class="sidebar-link-num">8</span>UI/UX & Vibe Coding</a>
+        <div class="sidebar-section-title">共用資源</div>
+        <a href="glossary.html" class="sidebar-link">術語表</a>
+        <a href="prompt-patterns.html" class="sidebar-link active">Prompt 模式參考</a>
+        <a href="tools.html" class="sidebar-link">工具清單</a>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-section-title">模板與練習</div>
-        <a href="../templates/system-prompt-airline.html" class="sidebar-link">航空客服提示詞</a>
-<a href="../templates/website-short-template.html" class="sidebar-link active">網站簡短模板</a>
-<a href="../templates/website-full-template.html" class="sidebar-link">網站完整模板</a>
-<a href="../templates/chatflow-risk-control-template.html" class="sidebar-link">Chatflow 風控模板</a>
-        <a href="../exercises/exercise-1-rag-chatbot.html" class="sidebar-link">練習一：RAG 聊天機械人</a>
-<a href="../exercises/exercise-2-chatflow-risk-control.html" class="sidebar-link">練習二：Chatflow 風控</a>
-<a href="../exercises/exercise-3-ui-prototype.html" class="sidebar-link">練習三：UI 原型設計</a>
+        <div class="sidebar-section-title">每週內容</div>
+        <a href="../weeks/week-03/index.html" class="sidebar-link">Week 03 — RAG & UI</a>
       </div>
       <div class="sidebar-section">
         <div class="sidebar-section-title">外部資源</div>
@@ -50,14 +39,13 @@
         <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
       </div>
     </aside>
-
     <div class="main">
       <header class="header">
         <div class="header-left">
           <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </button>
-          <span class="header-title">網站生成 — 簡短模板</span>
+          <span class="header-title">Prompt 模式參考</span>
         </div>
         <div class="header-right">
           <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
@@ -69,50 +57,70 @@
           </button>
         </div>
       </header>
-
       <main class="content">
         <a href="../index.html" class="article-back">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          返回 Week 03
+          返回課程首頁
         </a>
         <div class="article-header">
-          <h1 class="article-title">網站生成 — 簡短模板</h1>
+          <h1 class="article-title">Prompt 模式參考</h1>
         </div>
         <div class="article-body">
 
-<blockquote>使用場景：在 Google Gemini Canvas 中快速生成網站。</blockquote>
+<h2>R-C-C-O 系統提示詞公式</h2>
 
-<hr>
+<p>好的系統提示詞包含四個組件：</p>
 
-<h2>Prompt 模板</h2>
+<table>
+<tr><th>組件</th><th>說明</th><th>範例</th></tr>
+<tr><td><strong>R — 角色（Role）</strong></td><td>定義 AI 身份與受眾</td><td>你是一位 [特定專業角色]，服務對象為 [受眾類型]</td></tr>
+<tr><td><strong>C — 核心指令（Core Instruction）</strong></td><td>定義主要職責與規則</td><td>你的主要職責為 [核心目標]</td></tr>
+<tr><td><strong>C — 限制條件（Constraints）</strong></td><td>設定必須遵守的限制</td><td>你必須遵守 [限制條件 1]、[限制條件 2]</td></tr>
+<tr><td><strong>O — 輸出格式（Output format）</strong></td><td>定義風格與語氣</td><td>[風格] / [語氣]</td></tr>
+</table>
 
+<h2>負責任 AI 客服 Prompt 設計原則</h2>
+
+<ul><li><strong>限制來源</strong>：只根據知識庫回答，不可使用其他來源</li>
+<li><strong>要求引用</strong>：必須指出依據的文件段落或條款編號</li>
+<li><strong>誠實拒答</strong>：知識庫不足時必須明確表示無法確認</li>
+<li><strong>指定語言</strong>：明確指定輸出語言與語氣</li>
+<li><strong>禁止編造</strong>：不可自行推測或編造答案</li>
+</ul>
+<h2>Chatflow 風控設計模式</h2>
+
+<pre><code>用户提問 → 意圖分類器
+    ├── 低風險 → RAG 檢索 → LLM 生成回答
+    └── 高風險 → 固定回復 / 轉人工</code></pre>
+
+<p>分類標準：</p>
+<ul><li>低風險：資訊查詢、政策諮詢、一般問題</li>
+<li>高風險：金錢交易、退款、投訴、法律索賠</li>
+</ul>
+<h2>網站生成 Prompt 模板</h2>
+
+<h3>簡短模板</h3>
 <pre><code>建立一個 [頁數]-頁的網站，主題為 [目的]。
 受眾：[對象]。風格：[風格]。
 圖片：圖片網址。手機響應式設計。</code></pre>
 
-<hr>
-
-<h2>使用範例</h2>
-
-<pre><code>建立一個 3-頁的網站，主題為 香港非物質文化遺產介紹。
-受眾：大學生。風格：深色模式、極簡風格。
-圖片：使用 Unsplash 免費圖庫。手機響應式設計。</code></pre>
-
-<hr>
-
-<h2>風格選項參考</h2>
-
-<p>極簡風格、深色模式、紅金傳統風、粉彩可愛風、復古報紙風、企業專業風、像素藝術、卡通、極簡平面風、深色霓虹風</p>
+<h3>完整模板</h3>
+<pre><code>建立一個 [頁數]-頁的網站，主題為 [目的]。
+目標受眾：[對象]。
+頁面：[頁面列表及簡短說明]。
+關鍵功能：[功能列表]。
+圖片：使用如 Unsplash 等免費線上圖庫。
+風格：[風格]。主色調：[色盤]。字型：[字型描述]。
+手機響應式設計。包含導航選單。</code></pre>
 
         </div>
       </main>
-
       <footer class="footer">
-        BUS6083 · Week 03 · 課程知識庫<br>
+        BUS6083 · 課程知識庫 · 共用資源<br>
         <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
       </footer>
     </div>
   </div>
-  <script src="../../../assets/app.js"></script>
+  <script src="../assets/app.js"></script>
 </body>
 </html>

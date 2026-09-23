@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>術語表 — BUS6083</title>
+  <meta name="description" content="術語表 — BUS6083 課程知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/layout.css">
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="../index.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">B</div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">BUS6083</span>
+          <span class="sidebar-brand-sub">課程知識庫</span>
+        </div>
+      </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">共用資源</div>
+        <a href="glossary.html" class="sidebar-link active">術語表</a>
+        <a href="prompt-patterns.html" class="sidebar-link">Prompt 模式參考</a>
+        <a href="tools.html" class="sidebar-link">工具清單</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">每週內容</div>
+        <a href="../weeks/week-03/index.html" class="sidebar-link">Week 03 — RAG & UI</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">外部資源</div>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="sidebar-link">GitHub 倉庫</a>
+        <a href="https://maas.eduhk.hk/" target="_blank" rel="noopener" class="sidebar-link">教大 MaaS 平台</a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="sidebar-link">Google Gemini</a>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="header">
+        <div class="header-left">
+          <button class="header-menu-btn" data-menu-toggle aria-label="開啟選單">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="header-title">術語表</span>
+        </div>
+        <div class="header-right">
+          <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" class="header-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <button class="theme-toggle" data-theme-toggle aria-label="切換深淺色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </header>
+      <main class="content">
+        <a href="../index.html" class="article-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回課程首頁
+        </a>
+        <div class="article-header">
+          <h1 class="article-title">術語表</h1>
+        </div>
+        <div class="article-body">
+
+<h2>LLM 相關</h2>
+
+<table>
+<tr><th>術語</th><th>英文</th><th>解釋</th></tr>
+<tr><td>大型語言模型</td><td>Large Language Model (LLM)</td><td>基於 Transformer 架構、在海量文本上訓練的深度學習模型</td></tr>
+<tr><td>Token</td><td>Token</td><td>模型處理文本的基本單位，約等於一個詞或字</td></tr>
+<tr><td>幻覺</td><td>Hallucination</td><td>模型以篤定口吻生成與事實不符的內容</td></tr>
+<tr><td>知識截斷</td><td>Knowledge Cutoff</td><td>LLM 的知識停留在訓練數據收集完成的那一刻</td></tr>
+<tr><td>概率預測</td><td>Probabilistic Prediction</td><td>模型逐一預測最可能出現的下一個 Token</td></tr>
+<tr><td>RLHF</td><td>Reinforcement Learning from Human Feedback</td><td>人類反饋強化學習，用於對齊模型行為</td></tr>
+</table>
+
+<h2>RAG 相關</h2>
+
+<table>
+<tr><th>術語</th><th>英文</th><th>解釋</th></tr>
+<tr><td>檢索增強生成</td><td>Retrieval-Augmented Generation (RAG)</td><td>從外部知識庫動態檢索資訊，增強 LLM 輸出準確度</td></tr>
+<tr><td>向量嵌入</td><td>Embedding</td><td>將文本轉換為數值向量，支援語義檢索</td></tr>
+<tr><td>語義搜尋</td><td>Semantic Search</td><td>依據概念意涵進行比對，而非關鍵字匹配</td></tr>
+<tr><td>混合搜尋</td><td>Hybrid Search</td><td>結合語義比對與關鍵字檢索</td></tr>
+<tr><td>結果重排</td><td>Re-Rank</td><td>對初步檢索結果進行二次相關度評分</td></tr>
+<tr><td>分段模式</td><td>Chunk Mode</td><td>將文檔拆解為均勻的語義段落</td></tr>
+<tr><td>問答對模式</td><td>QA Pair Mode</td><td>由 AI 預先將內容提煉為一問一答形式</td></tr>
+<tr><td>引註</td><td>Citation</td><td>標註回答所依據的原文來源</td></tr>
+</table>
+
+<h2>模型參數</h2>
+
+<table>
+<tr><th>術語</th><th>英文</th><th>解釋</th></tr>
+<tr><td>最大生成長度</td><td>Max Tokens</td><td>限制模型單次回覆的最大長度</td></tr>
+<tr><td>溫度值</td><td>Temperature</td><td>控制生成的隨機度；低=嚴謹，高=創意</td></tr>
+<tr><td>核採樣值</td><td>Top_p</td><td>在累積概率達到門檻的詞彙中抽樣，典型值 0.9–0.95</td></tr>
+<tr><td>系統提示詞</td><td>System Prompt</td><td>設定模型角色、規範與限制，權限高於用戶輸入</td></tr>
+<tr><td>用戶提示詞</td><td>User Prompt</td><td>用户即時輸入的查詢或任務</td></tr>
+</table>
+
+<h2>Chatflow 相關</h2>
+
+<table>
+<tr><th>術語</th><th>英文</th><th>解釋</th></tr>
+<tr><td>工作流</td><td>Workflow</td><td>預先定義的、按步驟執行的任務序列</td></tr>
+<tr><td>意圖分類器</td><td>Intent Classifier</td><td>自動判別用户問題類型的節點</td></tr>
+<tr><td>指定回復</td><td>Specified Response</td><td>輸出固定內容的節點，用於高風險路徑</td></tr>
+<tr><td>硬隔離</td><td>Hard Isolation</td><td>高風險業務強制繞過 LLM，轉人工或固定表單</td></tr>
+<tr><td>Human-in-the-Loop</td><td>Human-in-the-Loop</td><td>AI 負責標準件，人類負責複雜件的人機協作架構</td></tr>
+</table>
+
+<h2>UI/UX 相關</h2>
+
+<table>
+<tr><th>術語</th><th>英文</th><th>解釋</th></tr>
+<tr><td>使用者介面</td><td>User Interface (UI)</td><td>應用程式的外觀：顏色、字型、佈局、按鈕</td></tr>
+<tr><td>使用者體驗</td><td>User Experience (UX)</td><td>應用程式的使用感受：易用性、邏輯清晰度、流暢度</td></tr>
+<tr><td>Vibe Coding</td><td>Vibe Coding</td><td>用自然語言描述需求，由 AI 生成程式碼</td></tr>
+<tr><td>響應式設計</td><td>Responsive Design</td><td>自動適配不同螢幕尺寸的網頁設計</td></tr>
+</table>
+
+        </div>
+      </main>
+      <footer class="footer">
+        BUS6083 · 課程知識庫 · 共用資源<br>
+        <a href="https://github.com/Ohdbdh/bus6083" target="_blank" rel="noopener" style="color:var(--color-text-faint)">GitHub 倉庫</a>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
